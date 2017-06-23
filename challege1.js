@@ -71,7 +71,7 @@ function findLongestWord(str) {
 
     var longword =[];
     var tempLongWord = [];
-    str.toLowerCase();
+    str = str.toLowerCase();
 
     // str.split("");
 
@@ -80,21 +80,21 @@ function findLongestWord(str) {
             console.log("space");
             if (tempLongWord.length > longword.length) {
                 longword = tempLongWord;
-                tempLongWord=[];
             }
+            tempLongWord=[];
         }
         if((str[i].charCodeAt(0) > 96) && (str[i].charCodeAt(0) < 123)){
         tempLongWord.push(str[i]);
-        console.log(str[i]);
-        console.log(tempLongWord);
 
         }
     }
 
 
-
-    longword = longword.join(" ");
+    if (tempLongWord.length > longword.length) {
+        longword = tempLongWord;
+    }
+    longword = longword.join("");
     console.log("Answer to find longest word is...... " + longword );
 }
 
-findLongestWord("!!1hel!lo you!!");
+findLongestWord("fun&!! time and excITement woot###$$$###!");
